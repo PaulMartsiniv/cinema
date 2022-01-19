@@ -1,7 +1,6 @@
 package cinema.model;
 
 import java.util.Objects;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -28,10 +27,8 @@ import org.hibernate.Hibernate;
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private Long id;
     @Enumerated(EnumType.STRING)
-    @Column(name = "name")
     private RoleName name;
 
     public enum RoleName {
