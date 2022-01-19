@@ -21,7 +21,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     @Override
     public User register(String email, String password) {
         Set<Role> roles = new HashSet<>();
-        roles.add(roleService.getRoleByName(Role.RoleName.USER.name()));
+        roles.add(roleService.getByName(Role.RoleName.USER.name()));
         User user = User.builder().email(email).password(password).roles(roles).build();
         userService.add(user);
         shoppingCartService.registerNewShoppingCart(user);
